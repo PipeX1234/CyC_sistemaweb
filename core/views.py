@@ -22,8 +22,8 @@ def mostrar_index(request):
                 descripcionPresupuesto = request.POST.get("descripcionPresupuesto")
                 Presupuesto.objects.create(nombreCliente = nombreCliente, telefonoCliente = telefonoCliente, correoCliente=correoCliente, direccionCliente=direccionCliente, descripcionPresupuesto = descripcionPresupuesto)
                 try:
-                    tele_auth_token = "6134014021:AAFNbkWgs0WXoKITQWQuYPNMQHJBu1tDEow"
-                    tel_group_id = "testinTeleP"
+                    tele_auth_token = os.environ.get('API_key')
+                    tel_group_id = os.environ.get('teleID')
                     msg=f"Cliente: {nombreCliente}\nContacto Telefono: {telefonoCliente}\nContacto Correo: {correoCliente}\nDirección: {direccionCliente}\n\nDescripción del caso:\n{descripcionPresupuesto}"
                     telegram_api_url=f"https://api.telegram.org/bot{tele_auth_token}/sendMessage?chat_id=@{tel_group_id}&text={msg}"
                     tel_resp = requests.get(telegram_api_url)

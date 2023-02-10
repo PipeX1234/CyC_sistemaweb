@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'CyC.wsgi.application'
 DATABASES = {  
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'sql10596805',  
-        'USER': 'sql10596805',  
-        'PASSWORD': '2JzxiLabQr',  
-        'HOST': 'sql10.freemysqlhosting.net',  
-        'PORT': '3306',  
+        'NAME': os.environ.get('DB_NAME'),  
+        'USER': os.environ.get('DB_USER'),  
+        'PASSWORD': os.environ.get('DB_PASSWORD'),  
+        'HOST': os.environ.get('DB_HOST'),  
+        'PORT': os.environ.get('DB_PORT'),  
         'OPTIONS': {  
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
         }  
