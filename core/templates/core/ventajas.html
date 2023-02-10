@@ -1,0 +1,98 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+										{% block headerActive %}
+										<li><a href="{% url 'index' %}">Inicio</a></li>
+										<li class="active"><a href="{% url 'ventajas' %}">Ventajas</a></li>
+										<li><a href="{% url 'trabajos' %}">Nuestros <br> Trabajos</a></li>
+										<li><a href="{% url 'servicios' %}">Servicios</a></li>
+										<li><a href="{% url 'presupuesto' %}">Presupuesto</a></li>
+										{% endblock headerActive %}
+
+			
+
+
+			{% block content %}
+			<!-- 
+			=============================================
+				CallOut Banner 
+			============================================== 
+			-->
+			<div class="callout-banner no-bg">
+				<div class="container clearfix">
+					<h3 class="title">Nuestra ventaja es nuestra garantía</h3>
+					<p>
+						Nosotros no te entregamos la misma garantía de X tiempo de otras empresas, nosotros te entregamos una garantía de incluso hasta X tiempo. <br>
+						Si eso no te convence, observa otras ventajas de trabajar con nosotros
+					</p>
+				</div>
+			</div> <!-- /.callout-banner -->
+			
+			
+			
+			<!-- 
+			=============================================
+				About Company Stye Two
+			============================================== 
+			-->
+			<div class="about-compnay-two no-bg section-spacing">
+				<div class="overlay">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6 col-12 text order-lg-last">
+								<div class="theme-title-one">
+									<h2>Quienes Somos</h2>
+								</div> <!-- /.theme-title-one -->
+								<p>
+									Somos una compañía creada en el 20xx, encargada de entregarte no 
+									solo calidad, si no una garantía mayor al resto. Puedes 
+									contactarnos a través de los siguientes contactos
+								</p>
+							</div> <!-- /.col- -->
+							<div class="col-lg-6 col-12 order-lg-first">
+								<img src="{% static 'core/images/LogoCyC/logo_nico-1.png' %}" alt="C&C Ingeniería y construcción spa" class="left-img">
+							</div>
+						</div> <!-- /.row -->
+					</div> <!-- /.container -->
+				</div> <!-- /.overlay -->
+			</div> <!-- /.about-compnay-two -->
+
+
+			<!--
+			=====================================================
+				Why We Best
+			=====================================================
+			-->
+			<div class="why-we-best" id="ventajas">
+				<div class="overlay">
+					<div class="container">
+						<div class="theme-title-one">
+							<h2>Nuestras ventajas</h2>
+							<p>Tenemos ventajas no solo en garantía, si no también en nuestros materiales</p>
+						</div> <!-- /.theme-title-one -->
+
+						<div class="wrapper row no-gutters">
+							<div class="col-lg-12 order-lg-first">
+								<ul class="best-list-item">
+									<li class="col-lg-6 offset-3">
+										<img src="{% static 'core/images/icon/data-report.svg' %}" class="icon">
+										<h5><a href="#ventajas">Utilizamos X material</a></h5>
+										<p>Este material tiene más durabilidad, y permite mayor maleabilidad y tiempo de uso</p>
+									</li>
+									<li class="col-lg-6 offset-3">
+										<img src="{% static 'core/images/icon/commissions.svg' %}" class="icon">
+										<h5><a href="#ventajas">Utilizamos X material</a></h5>
+										<p>Este material tiene más durabilidad, y permite mayor maleabilidad y tiempo de uso</p>
+									</li>
+									<li class="col-lg-6 offset-3">
+										<img src="{% static 'core/images/icon/customer-service.svg' %}" class="icon">
+										<h5><a href="#ventajas">Utilizamos X material</a></h5>
+										<p>Este material tiene más durabilidad, y permite mayor maleabilidad y tiempo de uso</p>
+									</li>
+								</ul>
+							</div> <!-- /.col- -->
+						</div> <!-- /.wrapper -->
+					</div> <!-- /.container -->
+				</div> <!-- /.overlay -->
+			</div> <!-- /.why-we-best -->
+			{% endblock content %}

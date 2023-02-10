@@ -1,0 +1,72 @@
+{% extends 'core/base.html' %}
+{% load static %}
+										{% block headerActive %}
+										<li><a href="{% url 'index' %}">Inicio</a></li>
+										<li><a href="{% url 'ventajas' %}">Ventajas</a></li>
+										<li><a href="{% url 'trabajos' %}">Nuestros <br> Trabajos</a></li>
+										<li class="active"><a href="{% url 'servicios' %}">Servicios</a></li>
+										<li><a href="{% url 'presupuesto' %}">Presupuesto</a></li>
+										{% endblock headerActive %}
+
+			
+
+			{% block content %}
+			<!-- 
+			=============================================
+				Our Solution
+			============================================== 
+			-->
+			<div class="our-solution section-spacing">
+				<div class="container">
+					<div class="theme-title-one margintop-70">
+						<h2>Nuestros Servicios</h2>
+					</div> <!-- /.theme-title-one -->
+					<div class="wrapper">
+						<div class="row">
+							<div class="col-lg-4 col-sm-6 col-12">
+								<div class="single-solution-block">
+									<img src="{% static 'core/images/icon/suitcase.svg' %}" alt="" class="icon">
+									<h5><a href="#">Lorem Ipsum</a></h5>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.</p>
+								</div> <!-- /.single-solution-block -->
+							</div> <!-- /.col- -->
+							<div class="col-lg-4 col-sm-6 col-12">
+								<div class="single-solution-block">
+									<img src="{% static 'core/images/icon/money.svg' %}" alt="" class="icon">
+									<h5><a href="#">Duis Convallis</a></h5>
+									<p>Duis convallis convallis tellus id interdum velit laoreet id donec. In fermentum posuere urna nec tincidunt praesent semper. </p>
+								</div> <!-- /.single-solution-block -->
+							</div> <!-- /.col- -->
+							<div class="col-lg-4 col-sm-6 col-12">
+								<div class="single-solution-block">
+									<img src="{% static 'core/images/icon/costs-revenues-chart.svg' %}" alt="" class="icon">
+									<h5><a href="#">Egestas Tellus</a></h5>
+									<p>Egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Lacus vel facilisis volutpat est velit.</p>
+								</div> <!-- /.single-solution-block -->
+							</div> <!-- /.col- -->
+							<div class="col-lg-4 col-sm-6 col-12">
+								<div class="single-solution-block">
+									<img src="{% static 'core/images/icon/target.svg' %}" alt="" class="icon">
+									<h5><a href="#">Quam Elementum</a></h5>
+									<p>Quam elementum pulvinar etiam non quam. Nam libero justo laoreet sit amet cursus sit. Purus in massa feugiat nisl. </p>
+								</div> <!-- /.single-solution-block -->
+							</div> <!-- /.col- -->
+							<div class="col-lg-4 col-sm-6 col-12">
+								<div class="single-solution-block">
+									<img src="{% static 'core/images/icon/analysis.svg' %}" alt="" class="icon">
+									<h5><a href="#">Vestibulum Mattis</a></h5>
+									<p>Vestibulum mattis ullamcorper velit sed. Ut tristique et egestas quis ipsum suspendisse ultrices gravida. </p>
+								</div> <!-- /.single-solution-block -->
+							</div> <!-- /.col- -->
+							<div class="col-lg-4 col-sm-6 col-12">
+								<div class="single-solution-block">
+									<img src="{% static 'core/images/icon/startup-rocket.svg' %}" alt="" class="icon">
+									<h5><a href="#">Pharetra Convallis</a></h5>
+									<p>Pharetra convallis posuere morbi leo urna molestie at. Sagittis orci a scelerisque purus semper eget duis at.</p>
+								</div> <!-- /.single-solution-block -->
+							</div> <!-- /.col- -->
+						</div> <!-- /.row -->
+					</div> <!-- /.wrapper -->
+				</div> <!-- /.container -->
+			</div> <!-- /.our-solution -->
+			{% endblock content %}

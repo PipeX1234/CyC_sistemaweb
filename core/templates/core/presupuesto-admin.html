@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+{% load static %}
+			{% block content %}
+            <!-- Inicio Tabla con los datos de los presupuestos -->
+            <div class="container padding-presupuesto">
+                <div class="padding-presupuesto">
+                    <div>
+                        <h4>Presupuestos solicitados</h4>
+                    </div>
+
+
+                    <form method="GET" class="col-lg-12 offset-3" action="{% url 'presupuesto_admin' 'b' %}" name="formBusc" id="formBusc">
+                        <div class="col-lg-4 offset-5">
+                            <input type="search"  placeholder="Nombre del cliente" class="col-sm-12 col-lg-7 offset-lg-3" name="nomBusc" id="nomBusc">
+                            <button class="btn nav_search-btn" class="col-lg-1" name="btnBuscar" id="btnBuscar">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    {% comment %} <div class="content-right">
+                        <input type="text" placeholder="Busque por ID"> <a href="#">Q</a>
+                        <button class="btn nav_search-btn" class="col-lg-1" name="btnBuscar" id="btnBuscar">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                          </button>
+                    </div> {% endcomment %}
+                </div>
+
+                <div class="table" style="vertical-align: middle">
+                <div class="table-wrapper">
+                    {% if list %}
+                    <table class="table table-hover" id="tbUsuarioAdmin">
+                    <thead>
+                        <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Correo Electrónico</th>
+                        <th>Dirección</th>
+                        <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody style="justify-content: center">
+                        {% for pres in list %}
+                            <tr style="vertical-align: middle">
+                            <td>{{pres.idPresupuesto}}</td>
+                            <td>{{pres.nombreCliente}}</td>
+                            <td>{{pres.telefonoCliente}}</td>
+                            <td>{{pres.correoCliente}}</td>
+                            <td>{{pres.direccionCliente}}</td>
+                            <td>
+                                {{pres.descripcionPresupuesto}}
+                            </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+                    {% endif %}
+                    {% if mesg %}
+                    <div class="mesg alert alert-warning">
+                        <p>
+                            {{mesg}}
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+                </div>
+            </div>
+            <!-- Inicio Tabla con los datos de los presupuestos -->
+			{% endblock content %}

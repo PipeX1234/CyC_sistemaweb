@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+{% load static %}
+			{% block content %}
+			<!-- Inicio Caja de login -->
+			<div class="container pad-login">
+				<div class="centerHor">
+					<h2>C&C Ingeniería y Contrucción SPA</h2>	
+				</div>
+                <div class="centerHor">
+                    <p>
+                        Solo pueden iniciar sesión los trabajadores de esta empresa <br>
+                        Si lo desea, puede volver al <a href="index.html" class="link">inicio</a>
+                    </p>
+                </div>
+                <br>
+                {% if mesg %}
+                <div class="mesg alert alert-warning">
+                    <p>
+                        {{mesg}}
+                    </p>
+                </div>
+                {% endif %}
+                <div class="col-sm-12 col-lg-6 offset-lg-3">
+                    <div class="login-card col-sm-12 card">
+                        <form id="inicioForm" enctype="multipart/form-data" method="POST">
+
+                            {% csrf_token %} {{form.as_p}}
+
+                            <!-- <div class="row">
+                                <div class="pad-textbox centerHor col-sm-12 col-lg-3"><label for="name" style="color: black;">Usuario</label></div>
+                                <div class="pad-textbox centerHor col-sm-12 col-lg-6"><input type="text" placeholder="Nombre" name="name"></div>
+                            </div>
+                            <div class="row">
+                                <div class="pad-textbox centerHor col-sm-12 col-lg-3"><label for="password" style="color: black;">Contraseña</label></div>
+                                <div class="pad-textbox centerHor col-sm-12 col-lg-6"><input type="password" placeholder="Contraseña" name="password"></div>
+                            </div> -->
+                            <br>
+                            <div class="col-sm-12 col-lg-6 offset-lg-3">
+                                <button type="submit" class="theme-button-one centerHor">Iniciar Sesión</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+			</div>
+			<!-- Fin Caja de login -->
+			{% endblock content %}

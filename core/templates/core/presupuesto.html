@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+{% load static %}
+										{% block headerActive %}
+										<li><a href="{% url 'index' %}">Inicio</a></li>
+										<li><a href="{% url 'ventajas' %}">Ventajas</a></li>
+										<li><a href="{% url 'trabajos' %}">Nuestros <br> Trabajos</a></li>
+										<li><a href="{% url 'servicios' %}">Servicios</a></li>
+										<li class="active"><a href="{% url 'presupuesto' %}">Presupuesto</a></li>
+										{% endblock headerActive %}
+
+			{% block content %}
+			<!--
+                        =============================================
+                            Conatct us Section
+                        ==============================================
+                        -->
+			<div class="contact-us-section section-spacing margintop-70">
+				<div class="container">
+					<div class="theme-title-one">
+						<h2>Pide tu presupuesto rellenando tus siguientes datos</h2>
+						<p>Te contactaremos en los próximos 5 días</p>
+						{% if mesg %}
+						<div class="mesg alert alert-warning">
+							<p>
+								{{mesg}}
+							</p>
+						</div>
+						{% endif %}
+					</div> <!-- /.theme-title-one -->
+					<div class="clearfix main-content no-gutters row">
+						<div class="col-lg-7 col-12 offset-2">
+							<div class="form-wrapper">
+								<form class="theme-form-one form-validation" autocomplete="off" id="idPresupuesto" method="POST">
+									<div class="container">
+										{% csrf_token %}{{form.as_p}}
+									</div> <!-- /.row -->
+									<button class="theme-button-one">Pedir Presupuesto</button>
+								</form>
+							</div> <!-- /.form-wrapper -->
+						</div> <!-- /.col- -->
+					</div> <!-- /.main-content -->
+
+
+				</div> <!-- /.container -->
+
+				<!--Contact Form Validation Markup -->
+				<!-- Contact alert -->
+				<div class="alert-wrapper" id="alert-success">
+					<div id="success">
+						<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+						<div class="wrapper">
+							<p>Your message was sent successfully.</p>
+						</div>
+					</div>
+				</div> <!-- End of .alert_wrapper -->
+				<div class="alert-wrapper" id="alert-error">
+					<div id="error">
+						<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
+						<div class="wrapper">
+							<p>Sorry!Something Went Wrong.</p>
+						</div>
+					</div>
+				</div> <!-- End of .alert_wrapper -->
+			</div> <!-- /.contact-us-section -->
+			{% endblock content %}
