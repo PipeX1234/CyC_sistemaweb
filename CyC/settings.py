@@ -24,7 +24,7 @@ DatabaseWrapper.data_types['DateTimeField'] = 'datetime'
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3#(8*qy-4mvp1wd$0mru1c6wqa*uge)=-1z4!4k-box25gu)y8'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
